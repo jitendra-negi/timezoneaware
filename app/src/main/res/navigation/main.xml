@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@+id/authFragment">
+
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.timezoneaware.ui.auth.AuthFragment"
+        android:label="AuthFragment"
+        tools:layout="@layout/fragment_auth">
+        <action
+            android:id="@+id/action_authFragment_to_loginFragment"
+            app:destination="@+id/loginFragment" />
+        <action
+            android:id="@+id/action_authFragment_to_registerFragment"
+            app:destination="@+id/registerFragment" />
+        <action
+            android:id="@+id/action_authFragment_to_timezoneListFragment"
+            app:destination="@id/timezoneListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.timezoneaware.ui.auth.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_to_timezoneListFragment"
+            app:destination="@id/timezoneListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.timezoneaware.ui.auth.register.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_timezoneListFragment"
+            app:destination="@id/timezoneListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/timezoneListFragment"
+        android:name="com.example.timezoneaware.ui.main.timezonelist.TimezoneListFragment"
+        android:label="TimezoneListFragment"
+        tools:layout="@layout/fragment_timezone_list">
+        <action
+            android:id="@+id/action_timezoneFragment_to_addtimezoneFragment"
+            app:destination="@id/AddtimezoneFragment" />
+        <action
+            android:id="@+id/action_timezoneFragment_to_authFragment"
+            app:destination="@id/authFragment" />
+
+        <action
+            android:id="@+id/action_timezoneFragment_to_userListFragment"
+            app:destination="@id/userListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/AddtimezoneFragment"
+        android:name="com.example.timezoneaware.ui.main.addtimezone.AddTimezoneFragment"
+        android:label="AddTimezoneFragment"
+        tools:layout="@layout/fragment_addtimezone">
+        <action
+            android:id="@+id/action_addTimezoneFragment_to_timezoneListFragment"
+            app:destination="@id/timezoneListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userListFragment"
+        android:name="com.example.timezoneaware.ui.main.user.UserListFragment"
+        android:label="UserListFragment"
+        tools:layout="@layout/fragment_user_list">
+        <action
+            android:id="@+id/action_userListFragment_to_timezoneListFragment"
+            app:destination="@id/timezoneListFragment" />
+
+        <action
+            android:id="@+id/action_userListFragment_to_editUserFragment"
+            app:destination="@id/editUserFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editUserFragment"
+        android:name="com.example.timezoneaware.ui.main.editusers.EditUserFragment"
+        android:label="EditUserFragment"
+        tools:layout="@layout/fragment_edit_user">
+        <action
+            android:id="@+id/action_editUserFragment_to_userListFragment"
+            app:destination="@id/userListFragment" />
+    </fragment>
+
+</navigation>
